@@ -1,0 +1,40 @@
+<div class="mt-2">
+	<button class="btn btn-primary" (click)="onPrev()">
+		Anterior
+	</button>
+	&nbsp;
+	<button class="btn btn-primary" (click)="onNext()">
+		Siguiente
+	</button>
+	&nbsp;
+	<div class="form-check">
+		<input class="form-check-input" type="checkbox" [checked]="all" (change)="onChangeAll($event)">
+		<label class="form-check-label" for="flexCheckDefault">
+			Listar todos los productos
+		</label>
+	</div>
+</div>
+<table class="table table-dark table-hover">
+	<thead>
+		<tr>
+			<th></th>
+			<th scope="col">#</th>
+			<th scope="col">Creation Date</th>
+			<th scope="col">Descipcion</th>
+			<th scope="col">Expiry Date</th>
+			<th scope="col">Name</th>
+			<th scope="col">Price</th>
+		</tr>
+	</thead>
+	<tbody>
+		<tr *ngFor="let product of products">
+			<th><input type="checkbox" value="{{product.id}}" (change)="onAddProductUpdate(product)"></th>
+			<th scope="row">{{product.id}}</th>
+			<td>{{product.creationDate}}</td>
+			<td>{{product.description}}</td>
+			<td>{{product.expiryDate}}</td>
+			<td>{{product.name}}</td>
+			<td>{{product.price}}</td>
+		</tr>
+	</tbody>
+</table>

@@ -1,0 +1,23 @@
+<table class="table table-dark table-hover">
+	<thead>
+		<tr>
+			<th></th>
+			<th scope="col">#</th>
+			<th scope="col">Creation Date</th>
+			<th scope="col">Descipcion</th>
+			<th scope="col">Expiry Date</th>
+			<th scope="col">Name</th>
+			<th scope="col">Price</th>
+		</tr>
+	</thead>
+	<tbody>
+		<tr *ngFor="let product of products">
+			<th scope="row">{{product.id}}</th>
+			<td><input type="datetime-local">{{product.creationDate}}</td>
+			<td><input type="text">{{product.description}}</td>
+			<td><input type="datetime-local">{{product.expiryDate}}</td>
+			<td><input type="text">{{product.name}}</td>
+			<td><input type="text">{{product.price}}</td>
+		</tr>
+	</tbody>
+</table>
