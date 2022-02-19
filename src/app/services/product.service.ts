@@ -23,4 +23,12 @@ export class ProductService {
   postProduct(product): Observable<any> {
     return this.http.post(serverURL, {product});
   }
+
+  putProduct(product): Observable<any> {
+    return this.http.put(serverURL, {product});
+  }
+
+  deleteProduct(product): Observable<any> {
+    return this.http.delete(serverURL, product);
+  }
 }

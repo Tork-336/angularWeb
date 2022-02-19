@@ -1,4 +1,5 @@
 import { Component } from '@angular/core';
+import { ListProductComponent } from './components/list-product/list-product.component';
 
 @Component({
 	selector: 'app-root',
@@ -9,9 +10,13 @@ export class AppComponent {
 
 	title = 'prograColWeb';
 
-	constructor() { }
+	constructor(private listProductComponent: ListProductComponent) { }
 
 	ngOnInit() {
+	}
+
+	updateProduct() {
+		this.listProductComponent.onSubmitProductToUpdate();
 	}
 
 	onCreateProducts() {

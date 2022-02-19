@@ -1,6 +1,7 @@
 import { Component, OnInit } from '@angular/core';
 import { Product } from 'src/app/models/product.model';
 import { ProductService } from 'src/app/services/product.service';
+import { ServicesInjectableService } from '../services/services-injectable.service';
 
 @Component({
 	selector: 'app-list-product',
@@ -13,9 +14,9 @@ export class ListProductComponent implements OnInit {
 	public page: number = 0;
 	public size: number = 3;
 	public all: boolean = false;
-	public productUpdate: Product[];
+	public addProduct: Product[] = [];
 
-	constructor(private service: ProductService) { }
+	constructor(private service: ProductService, private serviceComponents: ServicesInjectableService) { }
 
 	ngOnInit() {
 		this.loadData(false, this.page, this.size);
@@ -47,8 +48,16 @@ export class ListProductComponent implements OnInit {
 	}
 
 	onAddProductUpdate(product): void{
-		this.productUpdate.push(product);
-		console.log(this.productUpdate);
+		this.addProduct.push(product);
+	}
+
+	onSubmitProductToDelete() {
+		this.service.deleteProduct(this.addProduct);
+	}
+
+	onSubmitProductToUpdate() {
+		console.log(this.addProduct);
+		this.serviceComponents.setProducts(this.addProduct);
 	}
 
 }
