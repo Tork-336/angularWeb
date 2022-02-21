@@ -54,9 +54,8 @@ export class ListProductComponent implements OnInit {
 	onSubmitProductToDelete() {
 		this.service.deleteProduct(this.addProduct);
 	}
-
-	onSubmitProductToUpdate() {
-		console.log(this.addProduct);
+	
+	ngOnDestroy() {
 		this.serviceComponents.setProducts(this.addProduct);
 	}
 
