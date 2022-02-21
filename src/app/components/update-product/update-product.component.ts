@@ -20,7 +20,6 @@ export class UpdateProductComponent implements OnInit {
 	}
 
 	ngOnInit() {
-		//this.products = this.productsService.getProductsUpdate();
 		this.productsService.setData$.subscribe(response => {
 			for (const add of response) {
 				this.producsToUpdateData.push(add);

@@ -27,7 +27,8 @@ import { ListProductComponent } from './components/list-product/list-product.com
 		ReactiveFormsModule
 	],
 	providers: [ListProductComponent],
-	bootstrap: [AppComponent]
+	bootstrap: [AppComponent],
+	exports: [AppComponent]
 })
 export class AppModule {
 
