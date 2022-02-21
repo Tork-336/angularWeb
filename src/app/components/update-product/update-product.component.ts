@@ -27,6 +27,7 @@ export class UpdateProductComponent implements OnInit {
 		});
 		for (const product of this.producsToUpdateData) {
 			const newProduct = this.formBuilder.group({
+				id: ['', Validators.required],
 				creationDate: ['', Validators.required],
 				description: ['', Validators.required],
 				expiryDate: ['', Validators.nullValidator],
@@ -34,6 +35,7 @@ export class UpdateProductComponent implements OnInit {
 				price: ['', Validators.required]
 			});
 			newProduct.setValue({
+				id: product.id,
 				creationDate: product.creationDate,
 				description: product.description,
 				expiryDate: product.expiryDate,
@@ -46,6 +48,10 @@ export class UpdateProductComponent implements OnInit {
 
 	products(): FormArray {
 		return this.form.controls["productsArray"] as FormArray;
+	}
+
+	onClickRemoveTemplateProduct(productIndex: number) {
+		this.products().removeAt(productIndex);
 	}
 
 }

@@ -2,6 +2,7 @@
 	<form [formGroup]="form" (ngSubmit)="onSubmitProduct()">
 		<table class="table table-bordered" formArrayName="productsArray">
 			<tr class="align-middle" *ngFor="let product of products().controls; let i=index" [formGroupName]="i">
+				<th scope="row" formControlName="id">{{product.id}}</th>
 				<td>
 					Create Date :
 					<input type="datetime-local" formControlName="creationDate" class="form-control">
