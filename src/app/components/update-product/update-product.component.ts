@@ -1,6 +1,7 @@
 import { Component, OnInit } from '@angular/core';
 import { FormArray, FormBuilder, FormGroup, Validators } from '@angular/forms';
 import { Product } from 'src/app/models/product.model';
+import { ProductService } from 'src/app/services/product.service';
 import { ServicesInjectableService } from '../services/services-injectable.service';
 
 @Component({
@@ -13,7 +14,7 @@ export class UpdateProductComponent implements OnInit {
 	public form: FormGroup;
 	public producsToUpdateData: Product[] = [];
 
-	constructor(private formBuilder: FormBuilder, private productsService: ServicesInjectableService) {
+	constructor(private formBuilder: FormBuilder, private service: ProductService, private productsService: ServicesInjectableService) {
 		this.form = this.formBuilder.group({
 			productsArray: this.formBuilder.array([])
 		});
@@ -52,6 +53,20 @@ export class UpdateProductComponent implements OnInit {
 
 	onClickRemoveTemplateProduct(productIndex: number) {
 		this.products().removeAt(productIndex);
+	}
+
+	onSubmitProduct() {
+		this.service.putProduct(this.form.value.productsArray).subscribe(response => {
+			if (response.success) {
+				for (let i = 0; i < this.form.value.productsArray.length; i++) {
+					this.onClickRemoveTemplateProduct(i);
+				}
+				alert("Exito agregando...!");
+			} else {
+				console.log(response);
+				alert(response.message);
+			}
+		});
 	}
 
 }

@@ -10,6 +10,7 @@ import { UpdateProductComponent } from './components/update-product/update-produ
 import { AppRoutingModule } from './app-routing.module';
 import { AddDinamycFieldComponent } from './components/add-dinamyc-field/add-dinamyc-field.component';
 import { ListProductComponent } from './components/list-product/list-product.component';
+import { DeleteProductComponent } from './components/delete-product/delete-product.component';
 
 @NgModule({
 	declarations: [
@@ -17,7 +18,8 @@ import { ListProductComponent } from './components/list-product/list-product.com
 		CreateProductComponent,
 		UpdateProductComponent,
 		AddDinamycFieldComponent,
-		ListProductComponent
+		ListProductComponent,
+		DeleteProductComponent
 	],
 	imports: [
 		BrowserModule,

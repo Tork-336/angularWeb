@@ -4,23 +4,23 @@
 			<tr class="align-middle" *ngFor="let product of products().controls; let i=index" [formGroupName]="i">
 				<td>
 					Create Date :
-					<input type="datetime-local" formControlName="creationDate" class="form-control">
+					<input type="datetime-local" formControlName="creationDate" class="form-control" disabled="true">
 				</td>
 				<td>
 					Description:
-					<input type="text" formControlName="description" class="form-control">
+					<input type="text" formControlName="description" class="form-control" disabled="true">
 				</td>
 				<td>
 					Expiry Date:
-					<input type="datetime-local" formControlName="expiryDate" class="form-control">
+					<input type="datetime-local" formControlName="expiryDate" class="form-control" disabled="true">
 				</td>
 				<td>
 					Name:
-					<input type="text" formControlName="name" class="form-control">
+					<input type="text" formControlName="name" class="form-control" disabled="true">
 				</td>
 				<td>
 					Price:
-					<input type="text" formControlName="price" class="form-control">
+					<input type="text" formControlName="price" class="form-control" disabled="true">
 				</td>
 				<td class="align-middle">
 					<button (click)="onClickRemoveTemplateProduct(i)" class="btn btn-danger">Remove</button>

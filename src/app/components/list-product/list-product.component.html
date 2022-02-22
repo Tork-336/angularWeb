@@ -12,13 +12,13 @@
 	</thead>
 	<tbody>
 		<tr *ngFor="let product of products">
-			<th><input type="checkbox" value="{{product.id}}" (change)="onAddProductUpdate(product)"></th>
-			<th scope="row">{{product.id}}</th>
-			<td>{{product.creationDate}}</td>
-			<td>{{product.description}}</td>
-			<td>{{product.expiryDate}}</td>
-			<td>{{product.name}}</td>
-			<td>{{product.price}}</td>
+			<th><input type="checkbox" value="{{product?.id}}" (change)="onAddProductUpdate(product)"></th>
+			<th scope="row">{{product?.id}}</th>
+			<td>{{product?.creationDate}}</td>
+			<td>{{product?.description}}</td>
+			<td>{{product?.expiryDate}}</td>
+			<td>{{product?.name}}</td>
+			<td>{{product?.price}}</td>
 		</tr>
 	</tbody>
 </table>

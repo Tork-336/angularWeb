@@ -10,7 +10,7 @@ import { ServicesInjectableService } from '../services/services-injectable.servi
 })
 export class ListProductComponent implements OnInit {
 
-	public products = {};
+	public products: Product[] = [];
 	public page: number = 0;
 	public size: number = 3;
 	public all: boolean = false;
