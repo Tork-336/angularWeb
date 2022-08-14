@@ -1,0 +1,10 @@
+
+.login-class {
+    min-width: 150px;
+    max-width: 500px;
+    width: 100%;
+}
+
+.login-field-class {
+    width: 100%;
+}

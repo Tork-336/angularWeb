@@ -10,11 +10,13 @@ import { ServicesInjectableService } from './components/services/services-inject
 })
 export class AppComponent {
 
-	title = 'prograColWeb';
+	title = 'App Web Angular - Material progress!';
 
 	constructor(private listProductComponent: ListProductComponent, private router: Router, private serviceProducts: ServicesInjectableService) { }
 
 	ngOnInit() {
-		this.router.navigate(['/product/list']);
+		//this.router.navigate(['/product/list']);
+		// Lauch Component Login here
+		this.router.navigate(['/login']);
 	}
 }

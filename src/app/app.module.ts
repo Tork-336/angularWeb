@@ -11,6 +11,9 @@ import { AppRoutingModule } from './app-routing.module';
 import { AddDinamycFieldComponent } from './components/add-dinamyc-field/add-dinamyc-field.component';
 import { ListProductComponent } from './components/list-product/list-product.component';
 import { DeleteProductComponent } from './components/delete-product/delete-product.component';
+import { LoginComponent } from './components/login/login.component';
+import { BrowserAnimationsModule } from '@angular/platform-browser/animations';
+import { MatButtonModule, MatCardModule, MatInputModule } from '@angular/material';
 
 @NgModule({
 	declarations: [
@@ -19,14 +22,20 @@ import { DeleteProductComponent } from './components/delete-product/delete-produ
 		UpdateProductComponent,
 		AddDinamycFieldComponent,
 		ListProductComponent,
-		DeleteProductComponent
+		DeleteProductComponent,
+		LoginComponent
 	],
 	imports: [
 		BrowserModule,
 		AppRoutingModule,
 		HttpClientModule,
 		FormsModule,
-		ReactiveFormsModule
+		ReactiveFormsModule,
+		BrowserAnimationsModule,
+		MatButtonModule,
+		MatCardModule,
+		MatInputModule,
+		MatButtonModule
 	],
 	providers: [ListProductComponent],
 	bootstrap: [AppComponent],
